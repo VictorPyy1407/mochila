@@ -28,7 +28,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css">
   <link rel="stylesheet" href="styles.css">
 
-  <script type="application/ld+json">
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MWP3LRKX');</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8WM6CYEB73"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8WM6CYEB73',{send_page_view:false});</script>
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2412226475899711');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2412226475899711&ev=PageView&noscript=1" alt=""></noscript>
+
+  <script type="application/ld+json" id="schemaProduct">
+
   {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -50,14 +57,11 @@
   </script>
 </head>
 <body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWP3LRKX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <header class="topbar">
     <a class="brand" href="#">
       <img class="brand-logo" src="IMG/VGshop Logo.png" alt="VG Shop Py" loading="lazy">
       <span>VG Shop Py</span>
-    </a>
-    <a class="header-whatsapp" href="https://wa.me/595972738779?text=Hola%21+Me+interesa+la+Mochila+Antirrobo+con+Puerto+USB" target="_blank" rel="noreferrer">
-      <img src="IMG/whatsapp.jpg" alt="WhatsApp" loading="lazy">
-      Pedí por WhatsApp
     </a>
   </header>
 
@@ -90,10 +94,6 @@
           <div class="offer-card" aria-label="Oferta por tiempo limitado">
             <span class="clock" aria-hidden="true"></span>
             <span>¡Oferta por tiempo limitado!</span>
-            <div class="timer">
-              <div><strong id="minutes">10</strong><small>Min</small></div>
-              <div><strong id="seconds">00</strong><small>Seg</small></div>
-            </div>
           </div>
 
           <div class="benefit-ticker" aria-label="Beneficios de compra">
@@ -116,14 +116,14 @@
             <span id="stockCount">19</span> unidades disponibles
           </div>
 
-          <h1>Mochila Antirrobo Premium <br>con Puerto USB</h1>
+          <h1 id="heroTitle">...</h1>
 
-          <p class="hero-subtitle">Protegé tus pertenencias con un diseño moderno, resistente e inteligente. Ideal para universidad, trabajo, viajes y uso diario.</p>
+          <p class="hero-subtitle" id="heroSubtitle">...</p>
 
           <div class="price-row">
-            <span class="price">Gs. 210.000</span>
-            <span class="old-price">Gs. 320.000</span>
-            <span class="discount">34% Descuento</span>
+            <span class="price" id="heroPrice">...</span>
+            <span class="old-price" id="heroOldPrice">...</span>
+            <span class="discount" id="heroDiscount">...</span>
           </div>
 
           <div class="actions">
@@ -132,7 +132,7 @@
                 <path d="M7 9V7a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
                 <path d="M5.4 9h13.2l-.9 10.1A2.1 2.1 0 0 1 15.6 21H8.4a2.1 2.1 0 0 1-2.1-1.9L5.4 9Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
               </svg>
-              <span>Comprar Ahora<br><small>Pagás al recibir - Envío rápido</small></span>
+              <span>Confirmar Pedido<br><small>Te contactamos para coordinar</small></span>
             </a>
             <a class="secondary-cta" href="#beneficios">Ver Beneficios</a>
           </div>
@@ -150,7 +150,7 @@
             Seguridad, comodidad y tecnología para tu día a día. La Mochila Antirrobo con Puerto USB está diseñada para quienes buscan llevar sus pertenencias protegidas, organizadas y siempre conectadas.<br><br>
             <strong>Características destacadas:</strong><br>
             • <strong>Diseño Antirrobo:</strong> Candado de combinación integrado y cierres ocultos para máxima seguridad.<br>
-            • <strong>Puerto USB Integrado:</strong> Cargá tus dispositivos móviles mientras caminás conectando un power bank interno.<br>
+            • <strong>Puerto USB Integrado:</strong> Compatible con teléfonos Android y iPhone usando tu propio cable de carga y un power bank interno.<br>
             • <strong>Material Impermeable:</strong> Tela Oxford de alta densidad repelente al agua.<br>
             • <strong>Compartimento para Notebook:</strong> Espacio acolchado para laptops de hasta 15.6 pulgadas.<br>
             • <strong>Diseño Ergonómico:</strong> Correa acolchada y transpirable para máxima comodidad.<br>
@@ -180,7 +180,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h.01M10 12h.01M14 12h.01M18 12h.01"/></svg>
           </div>
           <h3>Puerto USB Integrado</h3>
-          <p>Cargá tu celular mientras caminás. Conectá tu power bank interno y usá el puerto exterior.</p>
+          <p>Cargá tu celular mientras caminás. Compatible con teléfonos Android y iPhone usando tu cable de carga.</p>
         </article>
         <article class="benefit-card fade-up">
           <div class="benefit-icon">
@@ -408,12 +408,12 @@
         <div class="guarantee-card">
           <div class="guarantee-icon">🚚</div>
           <h3>Envíos a todo Paraguay</h3>
-          <p>Entrega rápida en 24-72 horas hábiles. Coordinamos por WhatsApp.</p>
+          <p>Entrega rápida en 24-72 horas hábiles. Te contactamos para coordinar el envío.</p>
         </div>
         <div class="guarantee-card">
           <div class="guarantee-icon">📞</div>
           <h3>Atención Personalizada</h3>
-          <p>Soporte directo por WhatsApp para resolver todas tus dudas.</p>
+          <p>Atención directa para resolver tus dudas antes del envío.</p>
         </div>
       </div>
     </section>
@@ -434,11 +434,11 @@
         </details>
         <details class="faq-item">
           <summary>¿Cómo funciona el puerto USB?</summary>
-          <p>La mochila tiene un sistema de conexión USB externa. Solo necesitás conectar un Power Bank dentro de la mochila y luego enchufar tu celular al puerto USB exterior para cargarlo mientras te movés.</p>
+          <p>La mochila tiene un sistema de conexión USB externa compatible con teléfonos Android y iPhone. Solo necesitás conectar un Power Bank dentro de la mochila y usar tu propio cable en el puerto USB exterior para cargar tu celular mientras te movés.</p>
         </details>
         <details class="faq-item">
           <summary>¿Cuánto demora el envío?</summary>
-          <p>Realizamos envíos a todo Paraguay con un plazo estimado de 24 a 72 horas hábiles. En Asunción y Central el envío es gratuito y coordinamos la entrega por WhatsApp.</p>
+          <p>Realizamos envíos a todo Paraguay con un plazo estimado de 24 a 72 horas hábiles. En Asunción y Central el envío es gratuito y te contactamos para coordinar la entrega.</p>
         </details>
         <details class="faq-item">
           <summary>¿Cómo pago?</summary>
@@ -451,13 +451,13 @@
       <div class="cta-card fade-up">
         <h2>No esperes más</h2>
         <p>Protegé tus pertenencias con la Mochila Antirrobo Premium. Seguridad, estilo y tecnología en una sola mochila.</p>
-        <div class="cta-price">Gs. 210.000</div>
+        <div class="cta-price" id="ctaPrice">...</div>
         <a class="primary-cta" href="#checkout">
           <svg class="bag-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7 9V7a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
             <path d="M5.4 9h13.2l-.9 10.1A2.1 2.1 0 0 1 15.6 21H8.4a2.1 2.1 0 0 1-2.1-1.9L5.4 9Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
           </svg>
-          <span>Comprar Ahora<br><small>Pagás al recibir</small></span>
+          <span>Confirmar Pedido<br><small>Pagás al recibir</small></span>
         </a>
         <p class="cta-note">🔒 Compra 100% segura · Pago contra entrega · Envío rápido</p>
       </div>
@@ -477,8 +477,8 @@
           <section class="checkout-product">
             <img id="checkoutProductImage" src="IMG/Principal1.jpg" alt="Mochila Antirrobo" loading="lazy">
             <div>
-              <strong>Mochila Antirrobo con Puerto USB</strong>
-              <span id="productPriceTop">Gs. 210.000</span>
+              <strong id="checkoutProductName">...</strong>
+              <span id="productPriceTop">...</span>
               <small>Envíos a todo Paraguay - Pagás al recibir</small>
             </div>
           </section>
@@ -486,34 +486,37 @@
           <label>Nombre completo
             <input type="text" name="name" autocomplete="name" required placeholder="Ej: María González">
           </label>
-          <label>WhatsApp
+          <label>Teléfono
             <input type="tel" name="phone" autocomplete="tel" required placeholder="Ej: 0981 123 456">
-          </label>
-          <label>Departamento <small>opcional</small>
-            <input type="text" name="departamento" placeholder="Ej: Central">
           </label>
           <label>Ciudad
             <input type="text" name="city" id="cityInput" autocomplete="address-level2" required placeholder="Ej: Asunción">
           </label>
-          <div class="delivery-notice" id="deliveryNotice">Asunción y Central: envío gratis y pago contra entrega. Interior: se coordina una seña previa por WhatsApp.</div>
-          <div class="shipping-note">Nota para el envío: si no cargás dirección exacta, coordinamos la ubicación y referencias por WhatsApp antes de enviar tu pedido.</div>
-          <label>Dirección <small>opcional</small>
-            <textarea name="address" rows="3" autocomplete="street-address" placeholder="Calle, número de casa, zona"></textarea>
-          </label>
-          <label>Referencia <small>opcional</small>
-            <input type="text" name="notes" placeholder="Ej: Casa color blanco, portón negro">
-          </label>
-          <label>Ubicación <small>opcional</small>
-            <div class="location-row">
-              <input type="url" name="map" id="mapsInput" placeholder="Pegá enlace de Google Maps" readonly>
-              <button type="button" data-open-map>Marcar en mapa</button>
-            </div>
-          </label>
+          <div class="delivery-notice" id="deliveryNotice">Asunción y Central: envío gratis y pago contra entrega. Interior: se coordina una seña previa antes del despacho.</div>
+          <div class="shipping-note">Nota para el envío: si no cargás dirección exacta, te contactamos para confirmar ubicación y referencias antes de enviar tu pedido.</div>
+          <details class="optional-fields">
+            <summary>Más detalles</summary>
+            <label>C.I. <small>opcional</small>
+              <input type="text" name="ci" placeholder="Ej: 1234567">
+            </label>
+            <label>Departamento <small>opcional</small>
+              <input type="text" name="department" placeholder="Ej: Central">
+            </label>
+            <label>Dirección <small>opcional</small>
+              <textarea name="address" rows="3" autocomplete="street-address" placeholder="Calle, número de casa, zona"></textarea>
+            </label>
+            <label>Referencia <small>opcional</small>
+              <input type="text" name="notes" placeholder="Ej: Casa color blanco, portón negro">
+            </label>
+            <label>Ubicación <small>opcional</small>
+              <div class="location-row">
+                <input type="url" name="map" id="mapsInput" placeholder="Pegá enlace de Google Maps" readonly>
+                <button type="button" data-open-map data-map-target="mapsInput">Marcar en mapa</button>
+              </div>
+            </label>
+          </details>
           <label>Cantidad
             <select name="quantity" id="quantitySelect">
-              <option value="1" data-price="210000">1 unidad - Gs. 210.000</option>
-              <option value="2" data-price="420000">2 unidades - Gs. 420.000</option>
-              <option value="3" data-price="630000">3 unidades - Gs. 630.000</option>
             </select>
           </label>
 
@@ -527,11 +530,11 @@
           <section class="order-summary">
             <h3>Resumen del pedido</h3>
             <dl>
-              <div><dt>Producto</dt><dd>Mochila Antirrobo USB - <span id="summaryQuantityText">1 unidad</span></dd></div>
-              <div><dt>Precio</dt><dd id="summaryPriceUnit">Gs. 210.000</dd></div>
+              <div><dt>Producto</dt><dd><span id="summaryProductName">...</span> - <span id="summaryQuantityText">1 unidad</span></dd></div>
+              <div><dt>Precio</dt><dd id="summaryPriceUnit">...</dd></div>
               <div><dt>Cantidad</dt><dd id="summaryQuantity">1 unidad</dd></div>
               <div><dt>Envío</dt><dd class="free" id="summaryShipping">Gratis (Asunción y Central)</dd></div>
-              <div><dt>Total a pagar</dt><dd class="total" id="summaryTotal">Gs. 210.000</dd></div>
+              <div><dt>Total a pagar</dt><dd class="total" id="summaryTotal">...</dd></div>
             </dl>
             <p id="paymentNote">Asunción y Central: no pagás nada ahora, abonás al recibir.</p>
           </section>
@@ -568,12 +571,12 @@
       <div class="footer-order-copy">
         <small>Compra segura</small>
         <h2>Comprá ahora y pagás al recibir</h2>
-        <p>Dejá tus datos y coordinamos la entrega por WhatsApp. Envíos a todo Paraguay con pago contra entrega en Asunción y Central.</p>
+        <p>Dejá tus datos y te contactamos para coordinar la entrega. Envíos a todo Paraguay con pago contra entrega en Asunción y Central.</p>
         <div class="footer-product-card">
           <img id="footerProductImage" src="IMG/Principal1.jpg" alt="Mochila Antirrobo" loading="lazy">
           <div>
-            <strong>Mochila Antirrobo con Puerto USB</strong>
-            <span id="footerProductPrice">Gs. 210.000</span>
+            <strong id="footerProductName">...</strong>
+            <span id="footerProductPrice">...</span>
             <small>Envíos a todo Paraguay - Pagás al recibir</small>
           </div>
         </div>
@@ -581,11 +584,11 @@
       <div class="footer-summary-card">
         <h3>Resumen del pedido</h3>
         <dl>
-          <div><dt>Producto</dt><dd>Mochila Antirrobo USB - <span id="footerSummaryQuantity">1 unidad</span></dd></div>
-          <div><dt>Precio</dt><dd id="footerSummaryUnitPrice">Gs. 210.000</dd></div>
+          <div><dt>Producto</dt><dd><span id="footerSummaryProductName">...</span> - <span id="footerSummaryQuantity">1 unidad</span></dd></div>
+          <div><dt>Precio</dt><dd id="footerSummaryUnitPrice">...</dd></div>
           <div><dt>Cantidad</dt><dd id="footerSummaryQty">1 unidad</dd></div>
           <div><dt>Envío</dt><dd class="free">Gratis (Asunción y Central)</dd></div>
-          <div><dt>Total</dt><dd class="total" id="footerSummaryTotal">Gs. 210.000</dd></div>
+          <div><dt>Total</dt><dd class="total" id="footerSummaryTotal">...</dd></div>
         </dl>
         <p id="footerPaymentNote">No pagás nada ahora en Asunción y Central.</p>
       </div>
@@ -593,28 +596,37 @@
         <label>Nombre completo
           <input type="text" name="name" autocomplete="name" required placeholder="Ej: María González">
         </label>
-        <label>WhatsApp
+        <label>Teléfono
           <input type="tel" name="phone" autocomplete="tel" required placeholder="Ej: 0981 123 456">
         </label>
-        <label>Departamento <small>opcional</small>
-          <input type="text" name="departamento" placeholder="Ej: Central">
-        </label>
         <label>Ciudad
-          <input type="text" name="city" required placeholder="Ej: Asunción">
+          <input type="text" name="city" autocomplete="address-level2" required placeholder="Ej: Asunción">
         </label>
-        <div class="delivery-notice footer-delivery-notice">Asunción y Central: envío gratis y pago contra entrega. Interior: se coordina una seña previa por WhatsApp.</div>
-        <div class="shipping-note footer-shipping-note">Nota para el envío: si no cargás dirección exacta, coordinamos la ubicación y referencias por WhatsApp antes de enviar tu pedido.</div>
-        <label>Dirección <small>opcional</small>
-          <textarea name="address" rows="3" autocomplete="street-address" placeholder="Calle, número de casa, zona"></textarea>
-        </label>
-        <label>Referencia <small>opcional</small>
-          <input type="text" name="notes" placeholder="Ej: Casa color blanco, portón negro">
-        </label>
+        <div class="delivery-notice footer-delivery-notice">Asunción y Central: envío gratis y pago contra entrega. Interior: se coordina una seña previa antes del despacho.</div>
+        <div class="shipping-note footer-shipping-note">Nota para el envío: si no cargás dirección exacta, te contactamos para confirmar ubicación y referencias antes de enviar tu pedido.</div>
+        <details class="optional-fields">
+          <summary>Más detalles</summary>
+          <label>C.I. <small>opcional</small>
+            <input type="text" name="ci" placeholder="Ej: 1234567">
+          </label>
+          <label>Departamento <small>opcional</small>
+            <input type="text" name="department" placeholder="Ej: Central">
+          </label>
+          <label>Dirección <small>opcional</small>
+            <textarea name="address" rows="3" autocomplete="street-address" placeholder="Calle, número de casa, zona"></textarea>
+          </label>
+          <label>Referencia <small>opcional</small>
+            <input type="text" name="notes" placeholder="Ej: Casa color blanco, portón negro">
+          </label>
+          <label>Ubicación <small>opcional</small>
+            <div class="location-row">
+              <input type="url" name="map" id="footerMapsInput" placeholder="Pegá enlace de Google Maps" readonly>
+              <button type="button" data-open-map data-map-target="footerMapsInput">Marcar en mapa</button>
+            </div>
+          </label>
+        </details>
         <label>Cantidad
           <select name="quantity" id="footerQuantitySelect">
-            <option value="1">1 unidad - Gs. 210.000</option>
-            <option value="2">2 unidades - Gs. 420.000</option>
-            <option value="3">3 unidades - Gs. 630.000</option>
           </select>
         </label>
         <button class="order-button" type="submit">
@@ -637,7 +649,7 @@
       <div class="success-icon">✓</div>
       <h2>¡Pedido recibido!</h2>
       <p>Muchas gracias por tu compra. Tu pedido <strong id="orderNumber">#000000</strong> fue registrado exitosamente.</p>
-      <p>Tu <strong>Mochila Antirrobo con Puerto USB</strong> será preparada para la entrega. Nos pondremos en contacto contigo antes de enviarlo.</p>
+      <p>Tu <strong id="confirmationProductName">...</strong> será preparada para la entrega. Nos pondremos en contacto contigo para confirmar los datos antes de enviarlo.</p>
       <p id="confirmationPaymentText">Recordá que el pago se realiza al recibir el producto. Te hablaremos al número <strong id="confirmationPhone">---</strong>.</p>
       <button type="button" class="confirmation-btn" data-close-confirmation>Entendido</button>
     </div>
@@ -652,6 +664,7 @@
   </a>
 
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
+  <script src="config-product.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
