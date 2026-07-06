@@ -1,8 +1,7 @@
 const SUPABASE_CONFIG = {
   url: PRODUCT_CONFIG.supabaseUrl,
   key: PRODUCT_CONFIG.supabaseAnonKey,
-  table: PRODUCT_CONFIG.supabaseTable,
-  metaPixelId: PRODUCT_CONFIG.metaPixelId
+  table: PRODUCT_CONFIG.supabaseTable
 };
 
 const trackingFired = new Set();
@@ -55,12 +54,12 @@ function initProductData() {
   setText('footerSummaryProductName', PRODUCT_CONFIG.shortName || PRODUCT_CONFIG.name);
   setText('footerSummaryUnitPrice', formatGuarani(PRODUCT_CONFIG.price));
   setText('confirmationProductName', PRODUCT_CONFIG.name);
-  
+
   const setImg = (sel, src) => { const el = document.querySelector(sel); if (el) el.src = src; };
   setImg('#mainProductImage', PRODUCT_CONFIG.images.hero);
   setImg('#checkoutProductImage', PRODUCT_CONFIG.images.hero);
   setImg('#footerProductImage', PRODUCT_CONFIG.images.hero);
-  
+
   const thumbImages = [PRODUCT_CONFIG.images.img1, PRODUCT_CONFIG.images.img2, PRODUCT_CONFIG.images.img3, PRODUCT_CONFIG.images.img4];
   const thumbsList = document.querySelectorAll('.thumb');
   thumbsList.forEach((thumb, index) => {
@@ -103,38 +102,6 @@ function trackingPayload(quantity = Number(document.querySelector('#quantitySele
   };
 }
 
-function metaPayload(payload) {
-  const quantity = Number(payload.cantidad || payload.quantity || 1);
-  const value = Number(payload.subtotal || payload.value || PRODUCT_CONFIG.price * quantity);
-
-  return {
-    content_name: PRODUCT_CONFIG.name,
-    content_type: 'product',
-    content_ids: [PRODUCT_CONFIG.id],
-    contents: [{ id: PRODUCT_CONFIG.id, quantity, item_price: PRODUCT_CONFIG.price }],
-    value,
-    currency: PRODUCT_CONFIG.currency,
-    quantity,
-    num_items: quantity,
-    order_id: payload.transaction_id,
-  };
-}
-
-function sendMetaFallback(eventName, payload = trackingPayload()) {
-  const params = new URLSearchParams({
-    id: SUPABASE_CONFIG.metaPixelId,
-    ev: eventName,
-    dl: window.location.href,
-    rl: document.referrer || '',
-    if: 'false',
-    ts: String(Date.now()),
-    cd: JSON.stringify(metaPayload(payload)),
-  });
-
-  const img = new Image();
-  img.src = `https://www.facebook.com/tr?${params.toString()}`;
-}
-
 function fireTracking(key, callback) {
   if (trackingFired.has(key)) return;
   trackingFired.add(key);
@@ -147,15 +114,6 @@ function trackGA(eventName, payload = trackingPayload()) {
   window.dataLayer.push({ event: eventName, ...payload });
 }
 
-function trackMeta(eventName, payload = trackingPayload()) {
-  if (typeof window.fbq !== 'function') {
-    sendMetaFallback(eventName, payload);
-    return;
-  }
-  const options = payload.transaction_id ? { eventID: payload.transaction_id } : undefined;
-  window.fbq('trackSingle', SUPABASE_CONFIG.metaPixelId, eventName, metaPayload(payload), options);
-}
-
 function trackLandingEvent(eventName, payload = trackingPayload()) {
   const events = {
     page_view: () => {
@@ -163,23 +121,18 @@ function trackLandingEvent(eventName, payload = trackingPayload()) {
     },
     view_item: () => {
       fireTracking('ga4:view_item', () => trackGA('view_item', payload));
-      fireTracking('meta:ViewContent', () => trackMeta('ViewContent', payload));
     },
     add_to_cart: () => {
       fireTracking('ga4:add_to_cart', () => trackGA('add_to_cart', payload));
-      fireTracking('meta:AddToCart', () => trackMeta('AddToCart', payload));
     },
     begin_checkout: () => {
       fireTracking('ga4:begin_checkout', () => trackGA('begin_checkout', payload));
-      fireTracking('meta:InitiateCheckout', () => trackMeta('InitiateCheckout', payload));
     },
     lead: () => {
       fireTracking('ga4:generate_lead', () => trackGA('generate_lead', payload));
-      fireTracking('meta:Lead', () => trackMeta('Lead', payload));
     },
     purchase: () => {
       trackGA('purchase', payload);
-      trackMeta('Purchase', payload);
     },
   };
   events[eventName]?.();
@@ -688,7 +641,7 @@ document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
         utmTerm: params.get('utm_term'), ...extra
       }),
       keepalive: event === 'page_hide'
-    }).catch(() => {});
+    }).catch(() => { });
   }
 
   function startHb() { if (!hbInterval) hbInterval = setInterval(() => { if (!hidden && document.visibilityState === 'visible') send('heartbeat'); }, 30000); }
