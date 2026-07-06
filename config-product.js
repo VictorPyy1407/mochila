@@ -13,9 +13,9 @@ const PRODUCT_CONFIG = {
   buttonText: "Reservar con pago al recibir",
   checkoutTitle: "Reservá en menos de 1 minuto",
   metaTitle: "Mochila Antirrobo con Puerto USB | VG Shop Py",
-  metaDescription: "Mochila antirrobo premium con puerto USB compatible con teléfonos Android y iPhone usando tu propio cable, material impermeable, compartimento para notebook y diseño ergonómico. Envíos a todo Paraguay y pago contra entrega en Asunción y Central.",
+  metaDescription: "Mochila antirrobo premium con puerto USB compatible con teléfonos Android y iPhone usando tu propio cable, material impermeable, compartimentos organizadores y diseño ergonómico. Envíos a todo Paraguay y pago contra entrega en Asunción y Central.",
   heroTitle: "Mochila Antirrobo con Puerto USB",
-  heroSubtitle: "Llevá tu notebook, documentos y celular más seguros en la calle, colectivo, moto, facultad u oficina. Diseño antirrobo, cierres protegidos, material impermeable y puerto USB para cargar usando tu power bank.",
+  heroSubtitle: "Llevá tu tablet, documentos y celular más seguros en la calle, colectivo, moto, facultad u oficina. Diseño antirrobo, cierres protegidos, material impermeable y puerto USB para cargar usando tu power bank.",
   images:{
     hero:"IMG/Principal1.jpg",
     banner:"IMG/Principal2.jpg",
@@ -24,7 +24,6 @@ const PRODUCT_CONFIG = {
     img3:"39.jpg",
     img4:"40.jpg"
   },
-  metaPixelId: '2412226475899711',
   supabaseUrl: 'https://roruinqorwgolcrhhmpm.supabase.co',
   supabaseAnonKey: 'sb_publishable_aRPb1yNunMEheat00BxwtQ_Uft732KJ',
   supabaseTable: 'pedidos_web',
