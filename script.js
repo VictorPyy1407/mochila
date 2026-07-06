@@ -320,11 +320,11 @@ function setPaymentNoteText(note, value) {
   if (!note) return;
   const isCOD = value && isCashOnDeliveryArea(value);
   if (!value) {
-    note.textContent = 'Asunción y Central: no pagás nada ahora, abonás al recibir.';
+    note.textContent = 'No pagás nada ahora. Primero registramos tu pedido y luego confirmamos datos antes de enviar.';
     return;
   }
   note.textContent = isCOD
-    ? 'No pagás nada ahora, abonás al recibir.'
+    ? 'No pagás nada ahora, abonás al recibir cuando se concrete la entrega.'
     : 'Interior: se coordina una seña previa y el saldo al recibir.';
 }
 
@@ -441,7 +441,13 @@ const formError = document.querySelector('#formError');
 
 function showCheckout() {
   if (!productPage || !checkoutPage) return;
-  trackLandingEvent('begin_checkout');
+  const payload = trackingPayload();
+  trackLandingEvent('begin_checkout', payload);
+  window.VisitorTracker?.trackEcommerce('begin_checkout', {
+    productName: PRODUCT_CONFIG.name,
+    productPrice: PRODUCT_CONFIG.price,
+    revenue: payload.value,
+  });
   productPage.hidden = true;
   checkoutPage.hidden = false;
   document.body.classList.add('checkout-open');
@@ -598,6 +604,18 @@ orderForms.forEach((form) => form.addEventListener('submit', async (event) => {
     const payload = { ...trackingPayload(quantity), transaction_id: orderId, value: subtotal };
     trackLandingEvent('lead', payload);
     trackLandingEvent('purchase', payload);
+    window.VisitorTracker?.trackEcommerce('generate_lead', {
+      productName: PRODUCT_CONFIG.name,
+      productPrice: PRODUCT_CONFIG.price,
+      orderId,
+      revenue: subtotal,
+    });
+    window.VisitorTracker?.trackEcommerce('purchase', {
+      productName: PRODUCT_CONFIG.name,
+      productPrice: PRODUCT_CONFIG.price,
+      orderId,
+      revenue: subtotal,
+    });
   } catch (error) {
     console.error(error);
     if (currentFormError) currentFormError.textContent = 'No se pudo guardar el pedido. Revisá la conexión o intentá de nuevo.';
